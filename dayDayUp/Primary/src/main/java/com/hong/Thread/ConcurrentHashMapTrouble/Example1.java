@@ -19,7 +19,9 @@ import java.util.stream.LongStream;
 @Slf4j
 public class Example1 {
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(new Example1().wrong());
+        //System.out.println(new Example1().wrong());
+
+        System.out.println("getData:" + getData(2));
     }
     //线程个数
     private static int THREAD_COUNT = 10;
@@ -28,8 +30,9 @@ public class Example1 {
 
     //帮助方法，用来获得一个指定元素数量模拟数据的ConcurrentHashMap
 
-    private ConcurrentHashMap<String, Long> getData(int count) {
+    private static ConcurrentHashMap<String, Long> getData(int count) {
         return LongStream.rangeClosed(1, count)
+                //todo boxed()即 将基本数据类型 转为 包装类 因为有些方法参数是Object对象 或者 泛型 即即无法接收 基本数据类型
                 .boxed()
                 .collect(Collectors.toConcurrentMap(i -> UUID.randomUUID().toString(), Function.identity(),
                         (o1, o2) -> o1, ConcurrentHashMap::new));
@@ -60,6 +63,7 @@ public class Example1 {
         forkJoinPool.awaitTermination(1, TimeUnit.HOURS);
         //最后元素个数会是1000吗？
         log.info("finish size:{}", concurrentHashMap.size());
+        System.out.println(concurrentHashMap);
         return "OK";
     }
 }
