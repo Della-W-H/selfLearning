@@ -1,0 +1,13 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: bank
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qingcheng_system?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+mybatis-plus: # 作用：可以看到sql语句得执行
+ configuration:
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
