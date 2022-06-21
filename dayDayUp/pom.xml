@@ -6,7 +6,11 @@
     <modules>
         <module>Senior</module>
         <module>Primary</module>
+        <module>spring-secutiry</module>
+        <module>AuthDemo-shiro</module>
+        <module>FactoryTemplateMethodmoduleDemo</module>
     </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
