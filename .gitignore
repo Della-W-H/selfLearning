@@ -1,0 +1,12 @@
+.project
+.settings/
+.idea/
+logs/
+.idea
+*.iml
+*/.classpath
+*/bin/
+*/target/
+*/.flattened-pom.xml
+*/apidocs/
+*/src/main/resources/static/apidocs/
