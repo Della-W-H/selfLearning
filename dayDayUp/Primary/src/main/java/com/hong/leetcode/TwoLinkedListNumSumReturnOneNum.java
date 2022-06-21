@@ -17,6 +17,7 @@ public class TwoLinkedListNumSumReturnOneNum {
 
         System.out.println("inverse again:" + inverse(inverse(O1)));
 
+
         NodeList T1 = new NodeList(5);
         T1.next = new NodeList(6);
         T1.next.next = new NodeList(4);
