@@ -19,6 +19,7 @@ public class MedianNumOfTwoSortArray {
         //System.out.println("the median is : " + getMedianByAnswer(nums1, nums2));
         System.out.println("the median is : " + findMedianSortedArrays(nums1, nums2));
         System.out.println("the median is : " + findMedianSortedArrays2(nums1, nums2));
+        System.out.println("ok we pull!-");
         test();
     }
 
