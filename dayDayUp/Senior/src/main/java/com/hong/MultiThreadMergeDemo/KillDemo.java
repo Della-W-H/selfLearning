@@ -36,7 +36,7 @@ public class KillDemo {
             //订单号
             final Long orderId = i + 100L;
             //用户id
-            final Long userId = Long.valueOf(i);
+            final Long userId = (long) i;
             Future<Result> future = executorService.submit(() -> {
                 countDownLatch.countDown();
                 //等待一秒钟等待其他线程的提交
