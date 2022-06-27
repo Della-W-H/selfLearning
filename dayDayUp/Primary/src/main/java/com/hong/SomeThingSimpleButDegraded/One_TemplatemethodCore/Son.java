@@ -1,4 +1,4 @@
-package com.hong.SomeThingSimpleButDegraded.One;
+package com.hong.SomeThingSimpleButDegraded.One_TemplatemethodCore;
 
 /**
  * @author wanghong

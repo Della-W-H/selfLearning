@@ -102,6 +102,7 @@ public class MedianNumOfTwoSortArray {
         int left = (n + m + 1) / 2;
         int right = (n + m + 2) / 2;
         //将偶数和奇数的情况合并，如果是奇数，会求两次同样的 k 。
+        //改一下 不要奇数情况下的重复判断 降低 计算机的重复运算次数 试了下 这完全是增加了 代码量 实际工作中应该也不会批次中处理大量数据 而是会 部分数据分批处理
         return (getKth(nums1, 0, n - 1, nums2, 0, m - 1, left) + getKth(nums1, 0, n - 1, nums2, 0, m - 1, right)) * 0.5;
     }
 
@@ -110,12 +111,14 @@ public class MedianNumOfTwoSortArray {
         int len1 = end1 - start1 + 1;
         int len2 = end2 - start2 + 1;
         //让 len1 的⻓度⼩于 len2，这样就能保证如果有数组空了，⼀定是 len1
-        if (len1 > len2) return getKth(nums2, start2, end2, nums1, start1, end1, k);
-        if (len1 == 0) return nums2[start2 + k - 1];
-        if (k == 1) return Math.min(nums1[start1], nums2[start2]);
+        if (len1 > len2) {return getKth(nums2, start2, end2, nums1, start1, end1, k);}
+        if (len1 == 0) {return nums2[start2 + k - 1];}
+        if (k == 1) {return Math.min(nums1[start1], nums2[start2]);}
+        //计算出要比较的 下标位置
         int i = start1 + Math.min(len1, k / 2) - 1;
         int j = start2 + Math.min(len2, k / 2) - 1;
         if (nums1[i] > nums2[j]) {
+            //如果 nums1 数组相应的位置 比nums2要大 即排除 所有 大于 nums2相应下标之前的所有数据 反之亦然小于亦算于此
             return getKth(nums1, start1, end1, nums2, j + 1, end2, k - (j -
                     start2 + 1));
         } else {
@@ -123,6 +126,8 @@ public class MedianNumOfTwoSortArray {
                     start1 + 1));
         }
     }
+
+    //答案上的最佳优化
 
     private static double findMedianSortedArrays2(int[] A, int[] B) {
         int m = A.length;

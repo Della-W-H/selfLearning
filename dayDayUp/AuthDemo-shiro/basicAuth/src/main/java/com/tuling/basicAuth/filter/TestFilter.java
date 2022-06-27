@@ -20,7 +20,6 @@ public class TestFilter implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         }else if(null == request.getSession().getAttribute(MyConstants.FLAG_CURRENTUSER)){
             servletResponse.getWriter().write("need to login first");
-            return;
         }else{
             filterChain.doFilter(servletRequest,servletResponse);
         }

@@ -7634,7 +7634,7 @@ function enter (vnode, toggleDisplay) {
   var duration = data.duration;
 
   // activeInstance will always be the <transition> component managing this
-  // transition. One edge case to check is when the <transition> is placed
+  // transition. One_TemplatemethodCore edge case to check is when the <transition> is placed
   // as the root node of a child component. In that case we need to check
   // <transition>'s parent for appear check.
   var context = activeInstance;

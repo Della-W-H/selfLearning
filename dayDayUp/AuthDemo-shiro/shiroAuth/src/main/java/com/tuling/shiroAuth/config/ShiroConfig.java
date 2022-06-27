@@ -38,9 +38,13 @@ public class ShiroConfig {
     public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("myRealm") AuthorizingRealm myRealm, @Qualifier("mobileRealm") Realm mobileRealm){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setCacheManager(new MemoryConstrainedCacheManager());
+
 //        securityManager.setRealm(myRealm);
+
         securityManager.setAuthenticator(getModularRealmAuthenticator());
+
 //        securityManager.setAuthorizer();
+
         securityManager.setRealms(Arrays.asList(myRealm,mobileRealm));
         securityManager.setRememberMeManager(new CookieRememberMeManager());
         securityManager.setSessionManager(new DefaultWebSecurityManager());
