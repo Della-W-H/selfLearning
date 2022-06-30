@@ -1,4 +1,4 @@
-package com.hong.SomeThingSimpleButDegraded.Five_StreamOperate;
+package com.hong.StreamOperation.Five_StreamOperate;
 
 import java.util.function.IntSupplier;
 import java.util.stream.IntStream;

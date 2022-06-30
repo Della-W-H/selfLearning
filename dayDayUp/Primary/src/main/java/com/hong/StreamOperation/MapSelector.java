@@ -1,10 +1,9 @@
-package com.hong.StreamCollection;
+package com.hong.StreamOperation;
 
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author wanghong
@@ -13,6 +12,10 @@ import java.util.stream.Collectors;
  */
 public class MapSelector {
     public static void main(String[] args) {
+
+
+        //todo 空数组的初始化
+        String[] strings = new String[]{};
 
         List<Human> humans = new ArrayList<>();
         humans.add(Human.builder().age(1).name("Aella").build());
