@@ -111,6 +111,7 @@ public class PrimeNumberCollector implements
             if(!p.test(a)){
                 return list.subList(0,i);
             }
+            i++;
         }
         return list;
     }

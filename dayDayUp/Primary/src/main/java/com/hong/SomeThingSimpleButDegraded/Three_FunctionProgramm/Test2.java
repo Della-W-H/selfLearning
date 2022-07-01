@@ -28,7 +28,7 @@ public class Test2 {
         System.out.println(orange);
     }
 
-    private static Fruit createSpecialFruit(String name, String price){
+    private static Fruit createSpecialFruit(String name, String price) {
         Fruit fruit = map.get(name).apply(price);
         fruit.setName(name);
         return fruit;

@@ -867,7 +867,7 @@ function toggleObserving (value) {
 }
 
 /**
- * Observer class that is attached to each observed
+ * ObserverPattern class that is attached to each observed
  * object. Once attached, the observer converts the target
  * object's property keys into getter/setters that
  * collect dependencies and dispatch updates.

@@ -34,7 +34,7 @@ public class Example1 {
         return LongStream.rangeClosed(1, count)
                 //todo boxed()即 将基本数据类型 转为 包装类 因为有些方法参数是Object对象 或者 泛型 即即无法接收 基本数据类型
                 .boxed()
-                .collect(Collectors.toConcurrentMap(i -> UUID.randomUUID().toString(), Function.identity(),
+                .collect(Collectors.toConcurrentMap(i-> UUID.randomUUID().toString(), Function.identity(),
                         (o1, o2) -> o1, ConcurrentHashMap::new));
     }
 

@@ -22,4 +22,7 @@ public interface Lambda {
     default void justOneMethodWhy(String s){
         System.out.println(s);
     }
+    /*default void justOneMethodWhy(){
+
+    }*/
 }
