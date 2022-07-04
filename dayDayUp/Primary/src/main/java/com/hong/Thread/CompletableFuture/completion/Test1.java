@@ -72,6 +72,7 @@ public class Test1 {
         return collect;
     }
 
+    //版三
     public static Stream<CompletableFuture<String>> findPricesStream3(String iphone, List<Goods> goods, ExecutorService pool) {
         return goods.stream()
                 .map(goods1 -> CompletableFuture.supplyAsync(
