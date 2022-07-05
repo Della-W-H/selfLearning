@@ -1,4 +1,4 @@
-package com.hong.StreamOperation.Five_StreamOperate;
+package com.hong.StreamOperation.Five_StreamOperate_RecreateCollectors;
 
 import java.util.List;
 import java.util.Map;

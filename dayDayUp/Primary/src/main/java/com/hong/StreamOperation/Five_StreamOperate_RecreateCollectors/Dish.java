@@ -1,4 +1,4 @@
-package com.hong.StreamOperation.Five_StreamOperate;
+package com.hong.StreamOperation.Five_StreamOperate_RecreateCollectors;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

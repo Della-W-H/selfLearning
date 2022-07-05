@@ -3,6 +3,7 @@ package com.hong.Thread.CompletableFuture.completion;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.Random;
 
@@ -26,7 +27,7 @@ public class Goods {
     public Goods(String name){
         this.name = name;
     }
-
+    @Async
     public String getPrice(String product){
         double price = calculatePrice(product);
         Discount.Code code = Discount.Code.values()[RANDOM.nextInt(Discount.Code.values().length)];

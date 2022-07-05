@@ -12,8 +12,6 @@ import java.util.List;
  */
 public class MapSelector {
     public static void main(String[] args) {
-
-
         //todo 空数组的初始化
         String[] strings = new String[]{};
 
@@ -32,6 +30,10 @@ public class MapSelector {
             return "";   //就很蠢
         }
         }).filter(c->!"".equals(c)).forEach(System.out::println);
+
+        //it`s so nice bro!
+        humans.stream().filter(a -> "Della".equals(a.getName()) && a.getAge() >= 4).findFirst().ifPresent(System.out::println);
+
     }
 }
 
