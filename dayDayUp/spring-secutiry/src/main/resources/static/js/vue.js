@@ -6098,7 +6098,7 @@ function createPatchFunction (backend) {
               warn(
                 'The client-side rendered virtual DOM tree is not matching ' +
                 'server-rendered content. This is likely caused by incorrect ' +
-                'HTML markup, for example nesting block-level elements inside ' +
+                'HTML markup, for exampleWithFunctionSupplier nesting block-level elements inside ' +
                 '<p>, or missing <tbody>. Bailing hydration and performing ' +
                 'full client-side render.'
               );
@@ -8618,7 +8618,7 @@ function transformNode (el, options) {
       warn(
         "class=\"" + staticClass + "\": " +
         'Interpolation inside attributes has been removed. ' +
-        'Use v-bind or the colon shorthand instead. For example, ' +
+        'Use v-bind or the colon shorthand instead. For exampleWithFunctionSupplier, ' +
         'instead of <div class="{{ val }}">, use <div :class="val">.'
       );
     }
@@ -8662,7 +8662,7 @@ function transformNode$1 (el, options) {
         warn(
           "style=\"" + staticStyle + "\": " +
           'Interpolation inside attributes has been removed. ' +
-          'Use v-bind or the colon shorthand instead. For example, ' +
+          'Use v-bind or the colon shorthand instead. For exampleWithFunctionSupplier, ' +
           'instead of <div style="{{ val }}">, use <div :style="val">.'
         );
       }
@@ -9589,7 +9589,7 @@ function processAttrs (el) {
           warn$2(
             name + "=\"" + value + "\": " +
             'Interpolation inside attributes has been removed. ' +
-            'Use v-bind or the colon shorthand instead. For example, ' +
+            'Use v-bind or the colon shorthand instead. For exampleWithFunctionSupplier, ' +
             'instead of <div id="{{ val }}">, use <div :id="val">.'
           );
         }

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author wanghong
  * @date 2022/7/1
- * @apiNote 今典的观察者模式
+ * @apiNote 今典的观察者模式 观察者容器
  */
 public class Feed implements Subject {
     private final List<Observer> observers = new ArrayList<>();
