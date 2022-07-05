@@ -1,5 +1,7 @@
 package com.hong.StreamOperation.Five_StreamOperate_RecreateCollectors;
 
+import cn.hutool.core.collection.ListUtil;
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.Collector;
@@ -88,9 +90,10 @@ public class PrimeNumberCollector implements
      * @return
      */
     public static boolean isPrime(int candidate){
-        int candidateRoot = (int)Math.sqrt((double)candidate);
+        /*int candidateRoot = (int)Math.sqrt((double)candidate);
         //使用取平方根 对比找质数已经是最快的方法了 或许
-        return IntStream.rangeClosed(2,candidateRoot).noneMatch(i->candidate%i == 0);
+        return IntStream.rangeClosed(2,candidateRoot).noneMatch(i->candidate%i == 0);*/
+        return isPrime(ListUtil.of(2),candidate);
     }
 
     /**

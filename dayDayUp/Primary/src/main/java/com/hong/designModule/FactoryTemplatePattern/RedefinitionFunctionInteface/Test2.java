@@ -1,7 +1,4 @@
 package com.hong.designModule.FactoryTemplatePattern.RedefinitionFunctionInteface;
-
-import com.hong.designModule.FactoryTemplatePattern.RedefinitionFunctionInteface.ClothesFactory;
-
 /**
  * @author wanghong
  * @date 2022/7/1

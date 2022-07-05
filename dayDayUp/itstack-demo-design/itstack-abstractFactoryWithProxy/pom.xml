@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>itstack-demo-design-2-00</artifactId>
+    <artifactId>itstack-abstractFactoryWithProxy</artifactId>
 
 
 </project>
