@@ -18,8 +18,12 @@
     </properties>
 
     <modules>
-        <module>itstack-abstractFactoryWithProxy</module>
         <module>itstack-factoryModuleUseInProject</module>
+        <module>itstack-abstractFactoryWithProxy</module>
+        <module>itstack-builderPattern</module>
+        <module>itstack-prototypePattern</module>
+        <module>itstack-SingletonPattern</module>
+        <module>itstack-AdapterPattern</module>
     </modules>
 
     <dependencies>
