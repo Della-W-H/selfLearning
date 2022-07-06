@@ -18,12 +18,24 @@
     </properties>
 
     <modules>
+        <!--工厂模式-->
         <module>itstack-factoryModuleUseInProject</module>
+        <!--抽象工场模式 搭配 适配器和 代理模式-->
         <module>itstack-abstractFactoryWithProxy</module>
+        <!--建造者模式-->
         <module>itstack-builderPattern</module>
+        <!--原型模式-->
         <module>itstack-prototypePattern</module>
+        <!--单例模式-->
         <module>itstack-SingletonPattern</module>
+        <!--适配器模式-->
         <module>itstack-AdapterPattern</module>
+        <!--桥接器模式-->
+        <module>itstack-bridgePattern</module>
+        <!--组合模式-->
+        <module>itstack-CompositePattern</module>
+        <!--装饰器模式-->
+        <module>itstack-DecoratorPattern</module>
     </modules>
 
     <dependencies>
