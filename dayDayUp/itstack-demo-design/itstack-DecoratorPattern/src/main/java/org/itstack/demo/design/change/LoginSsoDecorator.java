@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 装饰器 功能拓展类 相比before中的LoginSsoDecorator继承SsoInterceptor 拓展情况下继承过多 此模式则没有
+ */
 public class LoginSsoDecorator extends SsoDecorator {
 
     private Logger logger = LoggerFactory.getLogger(LoginSsoDecorator.class);

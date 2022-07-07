@@ -36,6 +36,20 @@
         <module>itstack-CompositePattern</module>
         <!--装饰器模式-->
         <module>itstack-DecoratorPattern</module>
+        <!--外观模式1-->
+        <module>itstack-facadePatternWithAOP</module>
+        <!--外观模式2-->
+        <module>itstack-facadePattern2</module>
+        <!--享元模式-->
+        <module>itstack-FlyweightPattern</module>
+        <!--代理模式-->
+        <module>itstack-pureProxyPattern</module>
+        <!--责任链模式-->
+        <module>itstack-chainOfResponsibility</module>
+        <!--命令模式-->
+        <module>itstack-commandPattern</module>
+        <!--迭代模式-->
+        <module>itstack-iteratorPattern</module>
     </modules>
 
     <dependencies>
