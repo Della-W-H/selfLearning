@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.itstack.demo.design.dao.IStudentDao">
+
+   <!-- <resultMap id="studentMap" type="org.itstack.demo.design.po.Student">
+        <result column="s_id" property="id"/>
+        <result column="s_name" property="name"/>
+        <result column="s_birth" property="birth"/>
+        <result column="s_sex" property="sex"/>
+    </resultMap>-->
+
+    <select id="queryStudentInfoById" resultType="org.itstack.demo.design.po.Student">
+        SELECT s_id, s_name, s_birth, s_sex
+        FROM student
+        where s_id = #{id}
+    </select>
+
+</mapper>

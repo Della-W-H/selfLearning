@@ -50,6 +50,20 @@
         <module>itstack-commandPattern</module>
         <!--迭代模式-->
         <module>itstack-iteratorPattern</module>
+        <!--中介者（调停）模式-->
+        <module>itstack-MediatorPatternWithMyBatis</module>
+        <!--备忘录模式-->
+        <module>itstack-mementoPattern</module>
+        <!--观察者模式-->
+        <module>itstack-observePattern</module>
+        <!--状态模式-->
+        <module>itstack-statePattern</module>
+        <!--策略模式-->
+        <module>itstack-strategyPattern</module>
+        <!--模板模式-->
+        <module>itstack-templatePattern</module>
+        <!--访问者模式-->
+        <module>itstack-visitorPattern</module>
     </modules>
 
     <dependencies>
