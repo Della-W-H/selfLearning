@@ -128,10 +128,12 @@ public class MedianNumOfTwoSortArray {
     }
 
     //答案上的最佳优化
+    //直言 暂时没看懂 即使有一定的说明的情况下 哎 感觉 算法好鸡儿难啊
 
     private static double findMedianSortedArrays2(int[] A, int[] B) {
         int m = A.length;
         int n = B.length;
+
         if (m > n) {
             // 保证 m <= n
             return findMedianSortedArrays2(B, A);

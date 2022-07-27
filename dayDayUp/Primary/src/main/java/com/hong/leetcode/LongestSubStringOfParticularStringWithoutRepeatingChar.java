@@ -20,9 +20,8 @@ public class LongestSubStringOfParticularStringWithoutRepeatingChar {
         String given = "pwwkew";
         System.out.println("the longest subString of given one is : " + getTarget(given));
         System.out.println("the longest subString`s Length of given one is : " + lengthOfLongestSubstring(given));
-        //test();
+
     }
-    //todo we made it!
 
     private static String getTarget(String given) {
         TreeMap<Integer, Character> results = new TreeMap<>();
