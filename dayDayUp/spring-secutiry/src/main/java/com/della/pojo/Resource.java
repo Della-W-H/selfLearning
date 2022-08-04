@@ -1,4 +1,4 @@
-package com.heima.pojo;
+package com.della.pojo;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;

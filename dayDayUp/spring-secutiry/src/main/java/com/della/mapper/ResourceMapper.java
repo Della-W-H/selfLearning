@@ -1,7 +1,7 @@
-package com.heima.mapper;
+package com.della.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.heima.pojo.Resource;
+import com.della.pojo.Resource;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

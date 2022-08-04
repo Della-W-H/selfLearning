@@ -1,11 +1,10 @@
-package com.heima.service;
+package com.della.service;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.heima.mapper.AdminMapper;
-import com.heima.mapper.ResourceMapper;
-import com.heima.pojo.Admin;
-import com.heima.pojo.Resource;
+import com.della.mapper.AdminMapper;
+import com.della.mapper.ResourceMapper;
+import com.della.pojo.Admin;
+import com.della.pojo.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,7 +15,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
