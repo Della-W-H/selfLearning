@@ -39,7 +39,7 @@ public class WhyStringCantBeChanged {
         Field field = A.class.getDeclaredField("value");
         field.setAccessible(true);
         field.set(a,10);
-        //todo 换成Integer对象试试  怎么都不行 哪怕是只留一个对象也不能这样get改变只能set...why？
+        //todo 换成Integer对象试试  怎么都不行 哪怕是只留一个对象也不能这样get改变只能set...why？ 因为@Data注解
       /*  int i = (int) field.get(a);
         i = 10;
         Field field1 = A.class.getDeclaredField("value2");
