@@ -188,7 +188,7 @@ public class HttpUtils {
                     dateDate = LocalDateTimeUtils.parse2LocalDateTime(expires,
                             "EEE, dd-MMM-yy HH:mm:ss z");
                 } catch (DateTimeParseException e) { //时间格式转换错误
-                    log.error("ocalDateTimeUtils.parse2LocalDateTime Expires date exception ", e);
+                    log.error("localDateTimeUtils.parse2LocalDateTime Expires date exception ", e);
                 }
                 if (dateDate == null) {
                     value = value.replaceAll(prefix + expires + ";", "");

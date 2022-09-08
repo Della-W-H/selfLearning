@@ -8,7 +8,6 @@
         <module>Primary</module>
         <module>spring-secutiry</module>
         <module>AuthDemo-shiro</module>
-        <module>FactoryTemplateMethodmoduleDemo</module>
         <module>itstack-demo-design</module>
     </modules>
 
