@@ -1,4 +1,4 @@
-package com.hong.HTTPnormaluse;
+package com.hong.NormalUseOfHttp;
 
 
 import org.springframework.lang.Nullable;
@@ -139,7 +139,7 @@ public class HttpURLConnectionUtil{
             connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
 
             //拼装参数
-            if (null != param && param.equals("")) {
+            if (null != param && !param.equals("")) {
                 //设置参数
                 os = connection.getOutputStream();
                 //拼装参数
@@ -148,7 +148,7 @@ public class HttpURLConnectionUtil{
             //设置权限
             //设置请求头等
             //开启连接
-            //connection.connect();
+            connection.connect();
             //读取响应
             if (connection.getResponseCode() == 200) {
                 is = connection.getInputStream();
