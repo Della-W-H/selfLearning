@@ -1,5 +1,6 @@
 package com.hong.SomeThingSimpleButDegraded;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.util.regex.Matcher;
@@ -26,5 +27,9 @@ public class Fifteen_StringSub {
 //        System.out.println(s1.replaceAll("\\(", "").replaceAll("\\)", ""));
 
         //new HSSFWorkbook(s)
+
+        String del = "della";
+
+        System.out.println(StringUtils.rightPad("",del.length(),"*"));
     }
 }

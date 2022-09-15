@@ -27,7 +27,7 @@ public class Goods {
     public Goods(String name){
         this.name = name;
     }
-    @Async
+    //@Async
     public String getPrice(String product){
         double price = calculatePrice(product);
         Discount.Code code = Discount.Code.values()[RANDOM.nextInt(Discount.Code.values().length)];

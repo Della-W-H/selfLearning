@@ -1,5 +1,7 @@
 package com.hong.SomeThingSimpleButDegraded;
 
+import org.springframework.util.Assert;
+
 /**
  * @author wanghong
  * @date 2022/7/27
@@ -11,6 +13,7 @@ public class twelve_innerClassHowtouseOutClassMethdod {
         Speak speak = outClassA.new InnerClassB();
 
         speak.innerSpeak2();
+
     }
 }
 
@@ -39,4 +42,5 @@ class outClassA{
 
 interface Speak{
     void innerSpeak2();
+
 }

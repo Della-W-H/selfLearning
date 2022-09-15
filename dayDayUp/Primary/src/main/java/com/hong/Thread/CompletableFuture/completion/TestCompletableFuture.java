@@ -106,4 +106,5 @@ public class TestCompletableFuture {
         System.out.println("版四耗时：" + (System.currentTimeMillis() - start) + " 毫秒");
         return list;
     }
+
 }
