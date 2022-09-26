@@ -31,5 +31,7 @@ public class Fifteen_StringSub {
         String del = "della";
 
         System.out.println(StringUtils.rightPad("",del.length(),"*"));
+
+        System.out.println(del.substring(0,2));
     }
 }
