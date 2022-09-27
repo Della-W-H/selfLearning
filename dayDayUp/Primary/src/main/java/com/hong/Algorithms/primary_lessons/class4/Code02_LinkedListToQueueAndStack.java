@@ -35,6 +35,7 @@ public class Code02_LinkedListToQueueAndStack {
 			return size;
 		}
 
+		//尾插法
 		public void offer(V value) {
 			Node<V> cur = new Node<V>(value);
 			if (tail == null) {
@@ -47,7 +48,7 @@ public class Code02_LinkedListToQueueAndStack {
 			size++;
 		}
 
-		// C/C++的同学需要做节点析构的工作
+		// C/C++的同学需要做节点析构的工作 出队列
 		public V poll() {
 			V ans = null;
 			if (head != null) {
@@ -61,7 +62,7 @@ public class Code02_LinkedListToQueueAndStack {
 			return ans;
 		}
 
-		// C/C++的同学需要做节点析构的工作
+		// C/C++的同学需要做节点析构的工作 查看队列头元素
 		public V peek() {
 			V ans = null;
 			if (head != null) {
@@ -89,6 +90,7 @@ public class Code02_LinkedListToQueueAndStack {
 			return size;
 		}
 
+		//头插法 入栈
 		public void push(V value) {
 			Node<V> cur = new Node<>(value);
 			if (head == null) {
@@ -100,6 +102,7 @@ public class Code02_LinkedListToQueueAndStack {
 			size++;
 		}
 
+		//出栈
 		public V pop() {
 			V ans = null;
 			if (head != null) {
@@ -110,6 +113,7 @@ public class Code02_LinkedListToQueueAndStack {
 			return ans;
 		}
 
+		//查看 栈顶元素
 		public V peek() {
 			return head != null ? head.value : null;
 		}

@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Code01_ReverseList {
 
+	/**
+	 * 单链表
+	 */
 	public static class Node {
 		public int value;
 		public Node next;
@@ -14,6 +17,9 @@ public class Code01_ReverseList {
 		}
 	}
 
+	/**
+	 * 双链表
+	 */
 	public static class DoubleNode {
 		public int value;
 		public DoubleNode last;
@@ -24,6 +30,11 @@ public class Code01_ReverseList {
 		}
 	}
 
+	/**
+	 * 单链表置逆 原地置逆
+	 * @param head
+	 * @return
+	 */
 	public static Node reverseLinkedList(Node head) {
 		Node pre = null;
 		Node next = null;
@@ -36,6 +47,11 @@ public class Code01_ReverseList {
 		return pre;
 	}
 
+	/**
+	 *  双链表置逆 原地置逆
+	 * @param head
+	 * @return
+	 */
 	public static DoubleNode reverseDoubleList(DoubleNode head) {
 		DoubleNode pre = null;
 		DoubleNode next = null;
@@ -49,6 +65,11 @@ public class Code01_ReverseList {
 		return pre;
 	}
 
+	/**
+	 * 单链表链表法置逆
+	 * @param head
+	 * @return
+	 */
 	public static Node testReverseLinkedList(Node head) {
 		if (head == null) {
 			return null;
@@ -66,6 +87,11 @@ public class Code01_ReverseList {
 		return list.get(N - 1);
 	}
 
+	/**
+	 * 双链表链表法置逆
+	 * @param head
+	 * @return
+	 */
 	public static DoubleNode testReverseDoubleList(DoubleNode head) {
 		if (head == null) {
 			return null;
@@ -88,7 +114,9 @@ public class Code01_ReverseList {
 		return list.get(N - 1);
 	}
 
-	// for test
+	/**
+	 *  for test 尾插法 生成随机单链表
+	 */
 	public static Node generateRandomLinkedList(int len, int value) {
 		int size = (int) (Math.random() * (len + 1));
 		if (size == 0) {
@@ -106,7 +134,9 @@ public class Code01_ReverseList {
 		return head;
 	}
 
-	// for test
+	/**
+	 *  	for test 尾插法生成双链表
+	 */
 	public static DoubleNode generateRandomDoubleList(int len, int value) {
 		int size = (int) (Math.random() * (len + 1));
 		if (size == 0) {
@@ -125,7 +155,11 @@ public class Code01_ReverseList {
 		return head;
 	}
 
-	// for test
+	/**
+	 * for test 拿到原链表数据集合
+	 * @param head
+	 * @return
+	 */
 	public static List<Integer> getLinkedListOriginOrder(Node head) {
 		List<Integer> ans = new ArrayList<>();
 		while (head != null) {
@@ -135,7 +169,12 @@ public class Code01_ReverseList {
 		return ans;
 	}
 
-	// for test
+	/**
+	 * 检验原链表是否置逆成功
+	 * @param origin
+	 * @param head
+	 * @return
+	 */
 	public static boolean checkLinkedListReverse(List<Integer> origin, Node head) {
 		for (int i = origin.size() - 1; i >= 0; i--) {
 			if (!origin.get(i).equals(head.value)) {
@@ -146,7 +185,11 @@ public class Code01_ReverseList {
 		return true;
 	}
 
-	// for test
+	/**
+	 * 双端链表 数据原顺序获取
+	 * @param head
+	 * @return
+	 */
 	public static List<Integer> getDoubleListOriginOrder(DoubleNode head) {
 		List<Integer> ans = new ArrayList<>();
 		while (head != null) {
@@ -156,7 +199,12 @@ public class Code01_ReverseList {
 		return ans;
 	}
 
-	// for test
+	/**
+	 * 检测 双端链表是否 置逆成功
+	 * @param origin
+	 * @param head
+	 * @return
+	 */
 	public static boolean checkDoubleListReverse(List<Integer> origin, DoubleNode head) {
 		DoubleNode end = null;
 		for (int i = origin.size() - 1; i >= 0; i--) {
@@ -210,7 +258,7 @@ public class Code01_ReverseList {
 
 			DoubleNode node4 = generateRandomDoubleList(len, value);
 			List<Integer> list4 = getDoubleListOriginOrder(node4);
-			node4 = reverseDoubleList(node4);
+			node4 = testReverseDoubleList(node4);
 			if (!checkDoubleListReverse(list4, node4)) {
 				System.out.println("Oops4!");
 			}

@@ -42,6 +42,7 @@ public class Code03_DoubleLinkedListToDeque {
 				head = cur;
 				tail = cur;
 			} else {
+				//头插法
 				cur.next = head;
 				head.last = cur;
 				head = cur;
@@ -55,6 +56,7 @@ public class Code03_DoubleLinkedListToDeque {
 				head = cur;
 				tail = cur;
 			} else {
+				//尾插法
 				tail.next = cur;
 				cur.last = tail;
 				tail = cur;
