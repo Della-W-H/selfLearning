@@ -68,6 +68,7 @@ public class Code04_ReverseNodesInKGroup {
 		start.next = end;
 	}
 
+	@SuppressWarnings("all")
 	private static ListNode generateRandomLinkedList(int len, int value){
 		//随机指标下的链表长度
 		int size = (int)(Math.random() * (len + 1));

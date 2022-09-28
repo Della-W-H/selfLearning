@@ -1,12 +1,23 @@
 package com.hong.Algorithms.primary_lessons.class4;
 
-// 测试链接：https://leetcode.com/problems/merge-two-sorted-lists
+// 测试链接：https://leetcode.cn/problems/merge-two-sorted-lists
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
+/**
+ * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+ */
 public class Code06_MergeTwoSortedLinkedList {
 
-	// 不要提交这个类
+
 	public static class ListNode {
 		public int val;
 		public ListNode next;
+
+		public ListNode(int val){
+			this.val = val;
+		}
 	}
 
 	public static ListNode mergeTwoLists(ListNode head1, ListNode head2) {
@@ -31,4 +42,87 @@ public class Code06_MergeTwoSortedLinkedList {
 		return head;
 	}
 
+	private static ListNode generateSortList(int len){
+		if(len == 0){
+			return null;
+		}else{
+			int num=(int)((Math.random()*9 + 1));
+			ListNode node=new ListNode(num);
+			node.next=generateSortList(--len,num);
+			return node;
+		}
+	}
+
+	private static ListNode generateSortList(int len, int num){
+		if(len == 0){
+			return null;
+		} else {
+			int temp = (int)((Math.random()*(10-num) + num));
+			ListNode node=new ListNode(temp);
+			node.next=generateSortList(--len,temp);
+			return node;
+		}
+	}
+
+	private static int getOriginalVal(ListNode head){
+		ListNode temp = head;
+		int data = 0;
+		if(head == null){
+			return data;
+		}
+		data = head.val;
+		head = head.next;
+		while(head != null){
+			data = data*10+head.val;
+			head = head.next;
+		}
+		head = temp;
+		return data;
+	}
+
+	//todo 数字越大生成的概率越小
+	private static int randomNum(int value){
+		double percent = BigDecimal.valueOf(Math.random() * 100).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
+		double initial = 5.00, threshold = 1.25;
+		System.out.println(percent);
+		int tag = 9;
+		double temp = 0;
+		while(percent > temp+5.00){
+			initial += threshold;
+			temp += initial;
+			tag--;
+		}
+		return tag;
+	}
+
+	private static void testRandom(){
+		int testTimes = 100;
+		int[] nums=new int[9];
+		for(int i=0;i<testTimes;i++){
+			int result=randomNum(0);
+			System.out.println(result);
+			if(result>9||result<1){
+				System.out.println("Oops! "+result);
+			}
+			nums[result-1]++;
+		}
+		for(int i=0;i<nums.length;i++){
+			System.out.println((i+1)+" 出现了 "+nums[i]+"次 实际概率约为"+(double)nums[i]/testTimes);
+		}
+	}
+
+	public static void main(String[] args){
+		/*int testTimes =5000,len = 4;
+		for(int i=0;i<testTimes;i++){
+			ListNode num1 = generateSortList(len);
+
+			if(i%500 == 0){
+				ListNode num2 = generateSortList(len);
+				System.out.println("\n"+getOriginalVal(num1)+"	"+getOriginalVal(num2));
+				ListNode result = mergeTwoLists(num1,num2);
+				System.out.println("---->"+getOriginalVal(result)+"\n");
+			}
+		}*/
+        testRandom();
+	}
 }
