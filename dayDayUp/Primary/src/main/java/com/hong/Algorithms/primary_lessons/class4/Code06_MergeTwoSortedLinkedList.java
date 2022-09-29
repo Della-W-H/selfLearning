@@ -3,7 +3,6 @@ package com.hong.Algorithms.primary_lessons.class4;
 // 测试链接：https://leetcode.cn/problems/merge-two-sorted-lists
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 
 /**
  * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
@@ -46,7 +45,7 @@ public class Code06_MergeTwoSortedLinkedList {
 		if(len == 0){
 			return null;
 		}else{
-			int num=(int)((Math.random()*9 + 1));
+			int num=randomNum();
 			ListNode node=new ListNode(num);
 			node.next=generateSortList(--len,num);
 			return node;
@@ -57,11 +56,19 @@ public class Code06_MergeTwoSortedLinkedList {
 		if(len == 0){
 			return null;
 		} else {
-			int temp = (int)((Math.random()*(10-num) + num));
+			int temp =getRandom(num);
 			ListNode node=new ListNode(temp);
 			node.next=generateSortList(--len,temp);
 			return node;
 		}
+	}
+
+	private static int getRandom(int value){
+		int i;
+		do{
+			i=randomNum();
+		}while(i < value);
+		return i;
 	}
 
 	private static int getOriginalVal(ListNode head){
@@ -80,14 +87,13 @@ public class Code06_MergeTwoSortedLinkedList {
 		return data;
 	}
 
-	//todo 数字越大生成的概率越小
-	private static int randomNum(int value){
-		double percent = BigDecimal.valueOf(Math.random() * 100).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
+	//数字越大生成的概率越小
+	private static int randomNum(){
+		double percent = BigDecimal.valueOf(Math.random() * 90).setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 		double initial = 5.00, threshold = 1.25;
-		System.out.println(percent);
 		int tag = 9;
-		double temp = 0;
-		while(percent > temp+5.00){
+		double temp = 5.0;
+		while(percent > temp){
 			initial += threshold;
 			temp += initial;
 			tag--;
@@ -96,11 +102,10 @@ public class Code06_MergeTwoSortedLinkedList {
 	}
 
 	private static void testRandom(){
-		int testTimes = 100;
+		int testTimes = 10000000;
 		int[] nums=new int[9];
 		for(int i=0;i<testTimes;i++){
-			int result=randomNum(0);
-			System.out.println(result);
+			int result=randomNum();
 			if(result>9||result<1){
 				System.out.println("Oops! "+result);
 			}
@@ -112,7 +117,7 @@ public class Code06_MergeTwoSortedLinkedList {
 	}
 
 	public static void main(String[] args){
-		/*int testTimes =5000,len = 4;
+		int testTimes =5000,len = 4;
 		for(int i=0;i<testTimes;i++){
 			ListNode num1 = generateSortList(len);
 
@@ -122,7 +127,7 @@ public class Code06_MergeTwoSortedLinkedList {
 				ListNode result = mergeTwoLists(num1,num2);
 				System.out.println("---->"+getOriginalVal(result)+"\n");
 			}
-		}*/
+		}
         testRandom();
 	}
 }
