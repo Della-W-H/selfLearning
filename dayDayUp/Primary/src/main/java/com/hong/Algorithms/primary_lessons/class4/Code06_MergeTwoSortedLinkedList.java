@@ -98,11 +98,17 @@ public class Code06_MergeTwoSortedLinkedList {
 			temp += initial;
 			tag--;
 		}
+		/*String precentStr=String.valueOf(percent);
+		switch(precentStr){
+			Double aDouble=Double.valueOf(percent);
+			case aDouble < 5.00:
+
+		}*/
 		return tag;
 	}
 
 	private static void testRandom(){
-		int testTimes = 10000000;
+		int testTimes = 100000000;
 		int[] nums=new int[9];
 		for(int i=0;i<testTimes;i++){
 			int result=randomNum();
@@ -117,7 +123,7 @@ public class Code06_MergeTwoSortedLinkedList {
 	}
 
 	public static void main(String[] args){
-		int testTimes =5000,len = 4;
+		/*int testTimes =5000,len = 4;
 		for(int i=0;i<testTimes;i++){
 			ListNode num1 = generateSortList(len);
 
@@ -127,7 +133,7 @@ public class Code06_MergeTwoSortedLinkedList {
 				ListNode result = mergeTwoLists(num1,num2);
 				System.out.println("---->"+getOriginalVal(result)+"\n");
 			}
-		}
+		}*/
         testRandom();
 	}
 }

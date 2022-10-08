@@ -48,7 +48,7 @@ public class Test1 {
         System.out.println(dishes.stream().collect(groupingBy(Dish::getType, groupingBy(Test1::getCaloricLevel))));
 
         //包装类型转换 找到每种类型中热量最高的食物
-        System.out.println(dishes.stream().collect(groupingBy(Dish::getType, collectingAndThen(maxBy(Comparator.comparingInt(Dish::getCalories)), Optional::get))));
+        System.out.println(dishes.stream().collect(Collectors.toMap(Dish::getType,Function.identity(),BinaryOperator.maxBy(Comparator.comparingInt(Dish::getCalories)))));
         System.out.println(dishes.stream().collect(Collectors.toMap(Dish::getType, Function.identity(), BinaryOperator.maxBy(Comparator.comparingInt(Dish::getCalories)))));
 
         System.out.println(dishes.stream().collect(groupingBy(Dish::getType, mapping(Test1::getCaloricLevel, toSet()))));
