@@ -13,7 +13,7 @@ import java.util.Collections;
 public class MyJSONObject {
     public static void main(String[] args) {
         JSONObject object = new JSONObject();
-        for (int i = 0; i < 100; i++) {
+/*        for (int i = 0; i < 100; i++) {
             object.put(i+"-",i);
         }
         System.out.println(object);
@@ -28,9 +28,15 @@ public class MyJSONObject {
 
         ArrayList<String> dest = new ArrayList<>(list);
         list.remove("a");
-        System.out.println(dest);
+        System.out.println(dest);*/
+
+        change(object);
+        System.out.println(object.toString());
 
     }
 
 
+    private static void change(JSONObject json){
+        json.put("name","della");
+    }
 }
