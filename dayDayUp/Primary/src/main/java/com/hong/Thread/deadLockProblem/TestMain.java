@@ -5,6 +5,7 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -92,11 +93,40 @@ public class TestMain{
         return success;
     }
 
+    public long right() {
+        long begin = System.currentTimeMillis();
+        long success = IntStream.rangeClosed(1, 100).parallel()
+                .mapToObj(i -> {
+                    List<Item> cart = createCart().stream()
+                            .sorted(Comparator.comparing(Item::getName))
+                            .collect(Collectors.toList());
+                    return createOrder(cart);
+                })
+                .filter(result -> result)
+                .count();
+        log.info("success:{} totalRemaining:{} took:{}ms items:{}",
+                success,
+                items.entrySet().stream().map(item -> item.getValue().remaining).reduce(0, Integer::sum),
+                System.currentTimeMillis() - begin, items);
+        return success;
+    }
+
+    /**
+     * 回忆一下购物车添加商品的逻辑，随机添加了三种商品，假设一个购物车中的商品是 item1 和 item2，
+     * 另一个购物车中的商品是 item2 和 item1，一个线程先获取到了 item1 的锁，同时另一个线程获取到了 item2 的锁，
+     * 然后两个线程接下来要分别获取 item2 和 item1 的锁，这个时候锁已经被对方获取了，只能相互等待一直到 10 秒超时。
+     *
+     * 其实，避免死锁的方案很简单，**为购物车中的商品排一下序，
+     * 让所有的线程一定是先获取 item1 的锁然后获取 item2 的锁，就不会有问题了
+     * @param args
+     */
     public static void main(String[] args){
         TestMain testMain=new TestMain();
         //System.out.println(testMain.createCart());
 
-        testMain.wrong();
+        //testMain.wrong();
+        testMain.right();
+
     }
 }
 
@@ -113,6 +143,10 @@ class Item{
 
     public Item(String name){
         this.name = name;
+    }
+
+    public String getName(){
+        return name;
     }
 
     //public item(){} 属性有final 修饰即不能提供无参构造方法了
